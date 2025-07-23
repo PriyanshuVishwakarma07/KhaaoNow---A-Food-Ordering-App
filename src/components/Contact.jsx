@@ -69,7 +69,7 @@ const Contact = () => {
               <div>
                 <h3>24/7 Customer Care</h3>
                 <p>+91 12345 67890</p>
-                <p>support@foodbazaar.com</p>
+                <p>support@KhaaoNow.com</p>
               </div>
             </div>
             <div className="support-item">
@@ -77,7 +77,7 @@ const Contact = () => {
               <div>
                 <h3>Restaurant Partners</h3>
                 <p>+91 98765 43210</p>
-                <p>partners@foodbazaar.com</p>
+                <p>partners@KhaaoNow.com</p>
               </div>
             </div>
             <div className="support-item">
@@ -85,7 +85,7 @@ const Contact = () => {
               <div>
                 <h3>App Support</h3>
                 <p>+91 87654 32109</p>
-                <p>appsupport@foodbazaar.com</p>
+                <p>appsupport@KhaaoNow.com</p>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Contact = () => {
               <div className="icon blue"><FaMapMarkerAlt /></div>
               <div>
                 <p>
-                  FoodBazaar Technologies Pvt. Ltd. <br />
+                  KhaaoNow Technologies Pvt. Ltd. <br />
                   22nd Floor, Tower B<br />
                   ABC 122002, India
                 </p>
@@ -120,7 +120,7 @@ const Contact = () => {
         <h2>Find Us on Map</h2>
         <div className="map-frame">
           <iframe
-            title="FoodExpress Headquarters"
+            title="KhaaoNow Headquarters"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.223468354734!2d77.09089731507986!3d28.502482982469827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d193f5f5a7f07%3A0x7f1b0b5b5b5b5b5b!2sCyber%20City%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
             width="100%"
             height="400"

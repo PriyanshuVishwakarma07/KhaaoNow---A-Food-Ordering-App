@@ -1,7 +1,7 @@
 import { BsCart4 } from "react-icons/bs";
 import { assets } from '../assets/assets'
 import {useState} from "react"
-import { Link, NavLink } from "react-router-dom";
+import {Link, NavLink } from "react-router-dom";
 
 const Header = () =>{
   const [login, setLogin] = useState(true)
@@ -16,7 +16,7 @@ const Header = () =>{
   return(
     <div className="header">
       <div className="logo-container">
-        <img className='logo' src={assets.Logo} alt="App Logo" />
+        <Link to='/'><img className='logo' src={assets.Logo} alt="App Logo" /></Link>
       </div>
       <div className="nav-items">
         <ul>

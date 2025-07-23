@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard"
 import { useState, useEffect } from "react"
 import { RESTAURANT_API } from "../utils/Constents";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 const Body = () =>{
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [restaurantList, setRestaurantList] = useState([]);
@@ -14,7 +15,7 @@ const Body = () =>{
   const fetchData = async ()=>{
     const data = await fetch(RESTAURANT_API);
     const json = await data.json()
-    const resObj = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    const resObj = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;;
     // console.log(resObj);
     setRestaurantList(resObj);
     setAllRestaurants(resObj);
@@ -55,8 +56,8 @@ const Body = () =>{
         
         <div className="res-container">
         {
-          restaurantList.map((restaurant)=>
-          <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+          restaurantList.map((restaurant)=> 
+          <Link key={restaurant.info.id}  to={"/restaurants/" + restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>
           )
         }
         </div>
