@@ -16,7 +16,7 @@ const Body = () =>{
     const data = await fetch(RESTAURANT_API);
     const json = await data.json()
     const resObj = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;;
-    // console.log(resObj);
+    console.log(resObj);
     setRestaurantList(resObj);
     setAllRestaurants(resObj);
   }
@@ -39,22 +39,20 @@ const Body = () =>{
 
   
    return restaurantList.length == 0 ? <Shimmer /> :(
-    <div className="body">
-      <div className="search">
-
-        <input className="search-box" 
+    <div className="w-[80%] mx-auto py-5 px-5 flex-col  ">
+      <div className="w-full flex gap-2">
+        <input className="w-[60%] border rounded px-4" 
         type="text" 
         value={searchText}
         placeholder="Search for restaurants and food" 
         onChange={(e)=> setSearchText(e.target.value)}/>
 
-        <div className="filter">
-          <button className="topRated" onClick={filterHandler}>⭐Top Rated</button>
-          <button style={{marginLeft:"2px"}} onClick={unFilterHandler}>Clear Filters</button>
+        <div className="flex gap-4">
+          <button className="py-2 px-4 bg-zinc-300 rounded" onClick={filterHandler}>⭐Top Rated</button>
+          <button className="py-2 px-4 bg-zinc-300 rounded" style={{marginLeft:"2px"}} onClick={unFilterHandler}>Clear Filters</button>
         </div>
         </div>
-        
-        <div className="res-container">
+        <div className="mt-6 flex flex-wrap gap-2 ">
         {
           restaurantList.map((restaurant)=> 
           <Link key={restaurant.info.id}  to={"/restaurants/" + restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>

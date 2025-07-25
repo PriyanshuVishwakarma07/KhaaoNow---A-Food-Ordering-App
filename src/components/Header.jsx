@@ -2,34 +2,35 @@ import { BsCart4 } from "react-icons/bs";
 import { assets } from '../assets/assets'
 import {useState} from "react"
 import {Link, NavLink } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () =>{
   const [login, setLogin] = useState(true)
-
+  const OnlineStatus = useOnlineStatus();
   const navColor = (e) =>{
-    return {
-      color : e.isActive ? "white" : "black",
-      fontWeight: e.isActive ? "bold" : "normal",
-      textDecoration: e.isActive ? "underline" : "none",
-    }
+    return [
+      e.isActive ? "text-red-300 font-bold" : "text-black",
+      e.isActive ? "border-b-2 border-red-300" : "",
+    ].join(" ")
   }
   return(
-    <div className="header">
-      <div className="logo-container">
-        <Link to='/'><img className='logo' src={assets.Logo} alt="App Logo" /></Link>
+    <div className="w-full h-18 flex items-center justify-evenly bg-zinc-50 px-4 shadow-lg">
+      <div className="h-full">
+        <Link to='/'><img className='h-[90%]' src={assets.Logo} alt="App Logo" /></Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <NavLink style={navColor} to="/"><li>Home</li></NavLink>
-          <NavLink style={navColor} to="/about"><li>About</li></NavLink>
-          <NavLink style={navColor} to="/contact"><li>Contact</li></NavLink>
+      <div className="w-[40%]">
+        <ul className="flex items-center justify-around list-none font-semibold">
+          <li><NavLink className={navColor} to="/">Home</NavLink></li>
+          <li><NavLink className={navColor} to="/about">About</NavLink></li>
+          <li><NavLink className={navColor} to="/contact">Contact</NavLink></li>
         </ul>
       </div>
-      <div className="cart-icon">
+      <div className="text-[20px] ">
         <BsCart4 />
       </div>
-      <div className="login">
-        <button onClick={()=>setLogin(!login)}>{login ? "Login" : "Logout"}</button>
+      {OnlineStatus ? <h4 className="text-green-500">🟢 Online</h4> : <h4 className="text-red-500">🔴 Offline</h4>}
+      <div>
+        <button className="py-2 px-4 bg-red-300 rounded" onClick={()=>setLogin(!login)}>{login ? "Logout" : "Login"}</button>
       </div>
     </div>
   )
