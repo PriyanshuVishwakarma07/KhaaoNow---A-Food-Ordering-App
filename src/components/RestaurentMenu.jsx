@@ -12,13 +12,13 @@ const RestaurentMenu = () => {
 
     if(resInfo === null) return <Shimmer />;
     const {name, cuisines, costForTwoMessage } = resInfo.cards[2]?.card?.card?.info;
-    const {itemCards} =  resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card  
-    console.log(resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
+    // const {itemCards} =  resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card  
+    // console.log(resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 
     const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((elem)=>{
         return elem?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     })
-    console.log(categories)
+    // console.log(categories)
     return (
         <div className="w-[70%] mx-auto text-center ">
             <h1 className='text-2xl font-bold my-2'>{name}</h1>
